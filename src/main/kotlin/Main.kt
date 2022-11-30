@@ -1,8 +1,49 @@
-import FastSlowPointers.ListNode
+import java.io.File
 
 
 fun main() {
+    val treeBreadthFirstSearch = TreeBreadthFirstSearch()
 
+    var root = TreeBreadthFirstSearch.TreeNode(12, null, null)
+    root.left = TreeBreadthFirstSearch.TreeNode(7,null, null)
+    root.right = TreeBreadthFirstSearch.TreeNode(1,null, null)
+    root.left!!.left = TreeBreadthFirstSearch.TreeNode(9, null, null,)
+    root.right!!.left = TreeBreadthFirstSearch.TreeNode(10, null,null)
+    root.right!!.right = TreeBreadthFirstSearch.TreeNode(5,null,null)
+
+    println( treeBreadthFirstSearch.reverseLevelOrderTraversal(root))
+
+
+}
+fun mainInPlaceLinkedList() {
+    val inplaceLinkedList = InplaceReversalLinkedList()
+
+    val head = ListNode(2)
+    head.next = ListNode(4)
+    head.next!!.next = ListNode(6)
+    head.next!!.next!!.next = ListNode(8)
+    head.next!!.next!!.next!!.next = ListNode(10)
+
+    println(inplaceLinkedList.reverse(head))
+
+}
+
+
+fun mainCyclicSort() {
+    val cyclicSort = CyclicSort()
+    fun readInputForIntList(name: String) = File("src/main/kotlin/inputs", "$name.txt").readText().split(",").map { it.toInt() }.toMutableList()
+    val input = readInputForIntList("CyclicSort2")
+    println(cyclicSort.findAllMissingValues(input))
+}
+fun mainMergeIntervals() {
+    val mergeIntervals = MergeIntervals()
+    fun readInput(name: String) =
+        File("src/main/kotlin/inputs", "$name.txt").readText()
+            .split(",").map { println(it) }
+    //need to figure out how to read this correctly
+    val input = readInput("MergeIntervals1")
+    println(input)
+//    println(mergeIntervals.mergeIntervals(input))
 }
 
 fun mainFastAndSlowPointers() {
@@ -54,7 +95,7 @@ fun mainIslands() {
 fun mainSlidingWindows() {
 //    val slidingWindows = SlidingWindows()
 //
-//    fun readInputForIntList(name: String) = File("src/main/kotlin", "$name.txt").readText().split(",").map { it.toInt() }
+
 //    fun readInputForStringList(name: String) = File("src/main/kotlin", "$name.txt").readText()
 //    val input = readInputForIntList("SlidingWindowsExample")
 //    val input = readInputForStringList("SlidingWindowsExample2")
